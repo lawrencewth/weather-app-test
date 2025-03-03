@@ -1,38 +1,242 @@
-.App {
+
+.rootContainer {
+  display:flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  background: no-repeat center;
+}
+
+.error{
+  color: red;
+  padding: 8px;
+  border: 1px solid red;
+  border-radius: 8px;
+  background-color: lightpink;
+}
+
+.textField {
+  padding:12px 0;
+  border-radius:8px;
+  outline: none;
+  border:none;
+}
+
+.image {
+  height: 180px;
+  position: absolute; 
+  right: 0; 
+  top: -60px;
+
+  @media (max-width: 760px) {
+    height: 120px;
+  }
+} 
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+
+  @media (max-width: 760px) {
+    font-size: 12px;
+  }
+}
+
+/* Container */
+.pageContainer {
+  min-width: 500px;
+  max-width: 600px;
+  margin: 24px auto;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+
+  @media (max-width: 760px) {
+    min-width:150px;
+    margin:24px;
+  }
+}
+
+/* Search Box */
+.searchBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom:12px;
+}
+
+.searchBox input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 16px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.searchButton {
+  padding: 8px;
+  border-radius: 12px;
+  border: none;
+  background: #6a4bc9;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.searchButton:hover {
+  background: #5a3bb2;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Weather Card */
+.weatherContainer{
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border:1px solid white;
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  margin-top: 50px;
+  flex-grow: 1; /* Allows it to shrink if needed */
+
+  @media only screen and (min-width: 768px){
+    max-height:60vh;
+  }
+  
+  @media (max-width: 760px) {
+    max-height:60vh;
+  }
+}
+.weatherCard {
+  padding: 20px;
+  border-radius: 15px;
+
+  @media (max-width: 760px) {
+  padding: 12px;
+  }
+}
+
+.weatherDetails {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+}
+
+.weatherDetailsText{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:end;
+  color:#666666;
+  gap: 16px;
+
+  @media (max-width: 760px) {
+    flex-direction: column;
+    gap:0;
+    justify-content:end;
+    text-align:right;
+  }
+}
+
+.temperature {
+  font-size: 60px;
+  font-weight: bold;
+  color: #6c40b5;
+
+  @media (max-width: 760px) {
+    font-size: 40px;
+  }
+}
+
+/* Search History */
+.historyTitle {
+  margin:8px 0;
+  font-weight: 500;
+  
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.historyContainer {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding:16px;
+}
+
+.historyList {
+  max-height: 35vh;
+  overflow-y: auto;
+
+  @media only screen and (min-width: 768px){
+    max-height:25vh;
+  }
+
+  @media (max-width: 760px) {
+    max-height:35vh;
+  }
+}
+
+.historyItem {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin: 5px 0;
+  transition: 0.3s;
+
 }
 
-.App-link {
-  color: #61dafb;
+.historyItem:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.countryName{
+  font-weight: bold;
+  white-space: nowrap;
+  color:#666666;
+
+}
+
+.listButton {
+  padding: 6px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 16px;
+  background:white;
+}
+
+.textContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 8px;
+
+  @media (max-width: 760px) {
+    flex-direction:column;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
 }
